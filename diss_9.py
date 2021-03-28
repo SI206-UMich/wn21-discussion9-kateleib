@@ -48,17 +48,24 @@ def findLetters(sentences):
 
     #return the list of the last letter of all words that begin or end with a capital letter
 
+    lst = []
+    this = re.find_all([0-9]{1, 2}/s?[ap]m)
+    new = []
+    for i in this:
+        x = i[1:]
+        new.append(x)
+    return new
 
 
-#def main():
-    #url = 'https://pokemondb.net/pokedex/national'
-    #r = requests.get(url)
-    #soup = BeautifulSoup(r.text, 'html.parser')
-    #getCharmanderLink(soup)
-    #getEggMoves('scizor')
-    #pass
 
-#class TestAllMethods(unittest.TestCase):
+def main():
+    url = 'https://pokemondb.net/pokedex/national'
+    r = requests.get(url)
+    soup = BeautifulSoup(r.text, 'html.parser')
+    getCharmanderLink(soup)
+    getEggMoves('scizor')
+
+class TestAllMethods(unittest.TestCase):
     def setUp(self):
         self.soup = BeautifulSoup(requests.get('https://pokemondb.net/pokedex/national').text, 'html.parser')
 
